@@ -5,7 +5,9 @@ Unofficial portage overlay for Gentoo Linux providing ebuilds for various packag
 Currently available packages:
 
 **sys-kernel/vserver-sources**
+
 **sys-cluster/util-vserver**
+
 **virtual/linux-sources**
 
 # How to use this overlay
