@@ -4,12 +4,12 @@
   <repo priority="50" quality="experimental" status="unofficial">
     <name><![CDATA[darkrepo-overlay]]></name>
     <description lang="en"><![CDATA[Unofficial portage overlay for Gentoo Linux providing ebuilds for various packages.]]></description>
-    <homepage>https://github.com/TheDarkAvenger/gentoo-darkrepo</homepage>
+    <homepage>https://github.com/dark0z/gentoo-darkrepo</homepage>
     <owner type="person">
       <email>N/A</email>
       <name><![CDATA[Dark Avenger]]></name>
     </owner>
-    <source type="git">git://github.com/TheDarkAvenger/gentoo-darkrepo.git</source>
-    <feed>https://github.com/TheDarkAvenger/gentoo-darkrepo/commits/master.atom</feed>
+    <source type="git">git://github.com/dark0z/gentoo-darkrepo.git</source>
+    <feed>https://github.com/dark0z/gentoo-darkrepo/commits/master.atom</feed>
   </repo>
 </repositories>
