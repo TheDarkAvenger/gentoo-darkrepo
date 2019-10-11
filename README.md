@@ -21,7 +21,7 @@ To enable this overlay make sure you are using a recent Portage version (at leas
 [darkrepo-overlay]
 location = /usr/local/portage/darkrepo-overlay
 sync-type = git
-sync-uri = https://github.com/TheDarkAvenger/gentoo-darkrepo.git
+sync-uri = https://github.com/dark0z/gentoo-darkrepo.git
 priority=9999
 ```
 
