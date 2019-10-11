@@ -7,7 +7,7 @@ inherit autotools eutils
 
 DESCRIPTION="Create BitTorrent files easily"
 HOMEPAGE="http://www.createtorrent.com/"
-SRC_URI="https://github.com/dark0z/createtorrent/archive/${P}.tar.gz"
+SRC_URI="https://github.com/dark0z/createtorrent/archive/v${PVR}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -16,6 +16,8 @@ IUSE=""
 
 RDEPEND="dev-libs/openssl"
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/${P}-${PR}"
 
 src_prepare() {
 	default
