@@ -1,7 +1,7 @@
 # Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit eutils bash-completion-r1
 
@@ -33,6 +33,10 @@ RDEPEND="
 
 S="${WORKDIR}/${MY_P}"
 
+PATCHES=(
+	"${FILESDIR}/${P}-vserver-init-functions.patch"
+)
+
 pkg_setup() {
 	if [[ -z "${VDIRBASE}" ]]; then
 		einfo
@@ -52,6 +56,15 @@ src_test() {
 	sed -i -e 's/^\$D //' "${S}"/src/testsuite/vunify-test.sh || die
 
 	default
+}
+
+src_prepare() {
+	default
+
+	if use dietlibc; then
+        	eapply "${FILESDIR}/${P}-dietlibc.patch"
+	fi
+
 }
 
 src_configure() {
