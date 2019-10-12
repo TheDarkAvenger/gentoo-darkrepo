@@ -30,7 +30,9 @@ DEPEND="
 	dietlibc? ( >dev-libs/dietlibc-0.33 )
 	"
 
-RDEPEND="${CDEPEND}"
+RDEPEND="${CDEPEND}
+	systemd? ( >=sys-apps/systemd-197 )
+	"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -68,6 +70,10 @@ src_prepare() {
 	if use dietlibc; then
 		eapply "${FILESDIR}/${P}-dietlibc.patch"
 	fi
+
+	sed -i -e 's:/sbin/runscript:/sbin/openrc-run:g' gentoo/util-vserver || die
+	sed -i -e 's:/sbin/runscript:/sbin/openrc-run:g' gentoo/vprocunhide || die
+	sed -i -e 's:/sbin/runscript:/sbin/openrc-run:g' gentoo/vservers.default || die
 
 }
 
