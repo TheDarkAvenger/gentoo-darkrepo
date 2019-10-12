@@ -10,6 +10,8 @@ Currently available packages:
 
 **virtual/linux-sources**
 
+**net-p2p/createtorrent**
+
 # How to use this overlay
 
 ## with local overlays
