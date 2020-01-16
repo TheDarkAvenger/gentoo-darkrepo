@@ -28,23 +28,6 @@ UNIPATCH_LIST="${DISTDIR}/patch-${CKV}-vs${PV}.diff"
 UNIPATCH_STRICTORDER=1
 UNIPATCH_EXCLUDE="1207_linux-4.9.208.patch"
 
-#src_unpack() {
-#default
-##	if [ "${A}" != "" ]; then
-#		unpack ${A}
-#	fi
-
-#einfo "Doing dirty job ${WORKDIR}/${MY_P}/work/patches/1207_linux-4.9.208.patch"
-#
-#}
-
-#src_prepare() {
-#	default
-#	einfo "Doing dirty job ${WORKDIR}/${MY_P}/work/patches/1207_linux-4.9.208.patch"
-#	rm "${WORKDIR}/${MY_P}/work/patches/1207_linux-4.9.208.patch"
-#	epatch
-#}
-
 pkg_postinst() {
         kernel-2_pkg_postinst
         einfo "For more info on this patchset, and how to report problems, see:"
