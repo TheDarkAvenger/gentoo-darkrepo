@@ -8,6 +8,8 @@ Currently available packages:
 
 **sys-cluster/util-vserver**
 
+**dev-libs/dietlibc**
+
 **virtual/linux-sources**
 
 **net-p2p/createtorrent**
