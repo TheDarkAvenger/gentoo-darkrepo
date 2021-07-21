@@ -4,13 +4,13 @@ Unofficial portage overlay for Gentoo Linux providing ebuilds for various packag
 
 Currently available packages:
 
-**sys-kernel/vserver-sources**
+**sys-kernel/vserver-sources** (*Updated as soon as possible*)
 
 **sys-cluster/util-vserver**
 
 **dev-libs/dietlibc**
 
-**virtual/linux-sources**
+**virtual/linux-sources** (**Required for vservers-sources**)
 
 **net-p2p/createtorrent**
 
