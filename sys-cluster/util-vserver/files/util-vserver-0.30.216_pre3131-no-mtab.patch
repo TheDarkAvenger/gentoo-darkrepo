@@ -1,0 +1,17 @@
+--- a/scripts/vserver.functions
++++ b/scripts/vserver.functions
+@@ -1002,9 +1002,11 @@ function mountVserver
+ 
+     findObject -r mtab_src "$cfgdir"/apps/init/mtab "$__CONFDIR"/.defaults/init/mtab "$__PKGLIBDEFAULTDIR"/mtab /dev/null
+     
+-    pushd "$vdir" >/dev/null
+-    $_CHROOT_SH truncate /etc/mtab <"$mtab_src"
+-    popd >/dev/null
++    if test -z "$mtab_src";  then
++        pushd "$vdir" >/dev/null
++        $_CHROOT_SH truncate /etc/mtab <"$mtab_src"
++        popd >/dev/null
++    fi
+ 
+     test -n "$_HAVE_CHBIND_OPTIONS" || _generateChbindOptions "$cfgdir"
+ 

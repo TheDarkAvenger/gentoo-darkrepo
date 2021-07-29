@@ -38,6 +38,7 @@ S="${WORKDIR}/${MY_P}"
 PATCHES=(
 	"${FILESDIR}/${P}-vserver-init-functions.patch"
 	"${FILESDIR}/${P}-openrc-compat.patch"
+	"${FILESDIR}/${P}-no-mtab.patch"
 )
 
 
