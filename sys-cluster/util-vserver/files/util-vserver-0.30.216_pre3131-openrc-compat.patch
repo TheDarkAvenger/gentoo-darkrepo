@@ -1,0 +1,24 @@
+--- a/distrib/gentoo/init-vserver.sh
++++ b/distrib/gentoo/init-vserver.sh
+@@ -25,7 +25,7 @@
+ 
+ # Force TERM=linux for baselayout-2
+ 
+-RUNLEVEL=1 /sbin/rc sysinit || exit 1
+-/sbin/rc boot || exit 1
+-/sbin/rc ${1:-default}
++RUNLEVEL=1 /sbin/openrc sysinit || exit 1
++/sbin/openrc boot || exit 1
++/sbin/openrc ${1:-default}
+ exit 0
+--- a/scripts/vserver.functions
++++ b/scripts/vserver.functions
+@@ -371,7 +371,7 @@ function _generateInitOptions
+ 
+ 	    OPTS_ENV=( "${OPTS_ENV[@]}" TERM=$TERM )
+ 	    INITCMD_START=( $RC_WRAP "$RUNLEVEL_START" )
+-	    INITCMD_STOP=( env -i PATH=$RC_PATH TERM=$TERM RUNLEVEL=0 /sbin/rc shutdown )
++	    INITCMD_STOP=( env -i PATH=$RC_PATH TERM=$TERM RUNLEVEL=0 /sbin/openrc shutdown )
+ 	    INITCMD_PREPARE=( $_FAKE_RUNLEVEL 3 /var/run/utmp )
+ 	    ;;
+ 
