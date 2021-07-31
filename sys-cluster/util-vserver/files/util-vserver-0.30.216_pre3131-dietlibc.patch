@@ -1,18 +1,16 @@
-diff -puriN util-vserver-0.30.216-pre3120.orig/lib_internal/util-cleanupmount.c util-vserver-0.30.216-pre3120/lib_internal/util-cleanupmount.c
---- util-vserver-0.30.216-pre3131.orig/lib_internal/util-cleanupmount.c	2015-05-30 10:18:50.000000000 -0500
-+++ util-vserver-0.30.216-pre3131/lib_internal/util-cleanupmount.c	2019-02-19 02:36:55.000000000 -0600
-@@ -22,7 +22,6 @@
- 
+--- a/lib_internal/util-cleanupmount.c
++++ b/lib_internal/util-cleanupmount.c
+@@ -25,7 +25,6 @@
+ #ifdef HAVE_LINUX_TYPES_H
  #  include <linux/types.h>
  #endif
 -#include <linux/fs.h>
  
  #ifndef MS_REC
  #define MS_REC		0x4000
-diff -puriN util-vserver-0.30.216-pre3131.orig/src/secure-mount.c util-vserver-0.30.216-pre3120/src/secure-mount.c
---- util-vserver-0.30.216-pre3131.orig/src/secure-mount.c	2015-05-30 10:18:50.000000000 -0500
-+++ util-vserver-0.30.216-pre3131/src/secure-mount.c	2019-02-19 02:37:17.000000000 -0600
-@@ -46,7 +46,7 @@
+--- a/src/secure-mount.c
++++ b/src/secure-mount.c
+@@ -49,7 +49,7 @@
  #ifdef HAVE_LINUX_TYPES_H
  #  include <linux/types.h>
  #endif
