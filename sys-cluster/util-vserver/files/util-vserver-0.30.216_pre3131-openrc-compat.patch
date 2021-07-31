@@ -11,6 +11,7 @@
 +/sbin/openrc boot || exit 1
 +/sbin/openrc ${1:-default}
  exit 0
+
 --- a/scripts/vserver.functions
 +++ b/scripts/vserver.functions
 @@ -371,7 +371,7 @@ function _generateInitOptions
@@ -22,3 +23,86 @@
  	    INITCMD_PREPARE=( $_FAKE_RUNLEVEL 3 /var/run/utmp )
  	    ;;
  
+
+--- a/distrib/gentoo/net.vserver
++++ b/distrib/gentoo/net.vserver
+@@ -1,4 +1,4 @@
+-#!/sbin/runscript
++#!/sbin/openrc-run
+ # Copyright 1999-2007 Gentoo Foundation
+ # Distributed under the terms of the GNU General Public License v2
+ # $Header: $
+--- a/gentoo/bash-wrapper
++++ b/gentoo/bash-wrapper
+@@ -16,7 +16,7 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ 
+-: ${UTIL_VSERVER_VARS:=/usr/lib/util-vserver/util-vserver-vars}
++: ${UTIL_VSERVER_VARS:=/usr/libexec/util-vserver/util-vserver-vars}
+ test -e "$UTIL_VSERVER_VARS" || {
+     echo $"Can not find util-vserver installation (the file '$UTIL_VSERVER_VARS' would be expected); aborting..." >&2
+     exit 1
+--- a/gentoo/util-vserver
++++ b/gentoo/util-vserver
+@@ -1,9 +1,9 @@
+-#!/sbin/runscript
++#!/sbin/openrc-run
+ # Copyright 1999-2007 Gentoo Foundation
+ # Distributed under the terms of the GNU General Public License v2
+ 
+ start() {
+-	: ${UTIL_VSERVER_VARS:=/usr/lib/util-vserver/util-vserver-vars}
++	: ${UTIL_VSERVER_VARS:=/usr/libexec/util-vserver/util-vserver-vars}
+ 	if [ ! -e ${UTIL_VSERVER_VARS} ]; then
+ 		eerror "Cannot find util-vserver installation"
+ 		eerror "(the file '$UTIL_VSERVER_VARS' would be expected)"
+@@ -33,7 +33,7 @@ start() {
+ }
+ 
+ stop() {
+-	: ${UTIL_VSERVER_VARS:=/usr/lib/util-vserver/util-vserver-vars}
++	: ${UTIL_VSERVER_VARS:=/usr/libexec/util-vserver/util-vserver-vars}
+ 	if [ ! -e ${UTIL_VSERVER_VARS} ]; then
+ 		eerror "Cannot find util-vserver installation"
+ 		eerror "(the file '$UTIL_VSERVER_VARS' would be expected)"
+--- a/gentoo/vprocunhide
++++ b/gentoo/vprocunhide
+@@ -1,9 +1,9 @@
+-#!/sbin/runscript
++#!/sbin/openrc-run
+ # Copyright 1999-2005 Gentoo Foundation
+ # Distributed under the terms of the GNU General Public License v2
+ 
+ start() {
+-	: ${UTIL_VSERVER_VARS:=/usr/lib/util-vserver/util-vserver-vars}
++	: ${UTIL_VSERVER_VARS:=/usr/libexec/util-vserver/util-vserver-vars}
+ 	if [ ! -e ${UTIL_VSERVER_VARS} ]; then
+ 		eerror "Cannot find util-vserver installation"
+ 		eerror "(the file '$UTIL_VSERVER_VARS' would be expected)"
+--- a/gentoo/vservers.default
++++ b/gentoo/vservers.default
+@@ -1,4 +1,4 @@
+-#!/sbin/runscript
++#!/sbin/openrc-run
+ # Copyright 1999-2005 Gentoo Foundation
+ # Distributed under the terms of the GNU General Public License v2
+ 
+@@ -7,7 +7,7 @@ depend() {
+ }
+ 
+ start() {
+-	: ${UTIL_VSERVER_VARS:=/usr/lib/util-vserver/util-vserver-vars}
++	: ${UTIL_VSERVER_VARS:=/usr/libexec/util-vserver/util-vserver-vars}
+ 	if [ ! -e ${UTIL_VSERVER_VARS} ]; then
+ 		eerror "Cannot find util-vserver installation"
+ 		eerror "(the file '$UTIL_VSERVER_VARS' would be expected)"
+@@ -18,7 +18,7 @@ start() {
+ }
+ 
+ stop() {
+-	: ${UTIL_VSERVER_VARS:=/usr/lib/util-vserver/util-vserver-vars}
++	: ${UTIL_VSERVER_VARS:=/usr/libexec/util-vserver/util-vserver-vars}
+ 	if [ ! -e ${UTIL_VSERVER_VARS} ]; then
+ 		eerror "Cannot find util-vserver installation"
+ 		eerror "(the file '$UTIL_VSERVER_VARS' would be expected)"
