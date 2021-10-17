@@ -1,0 +1,12 @@
+diff -NurpP --minimal linux-4.9.275/Makefile linux-4.9.275-vs2.3.9.13/Makefile
+--- linux-4.9.275/Makefile	2021-07-12 22:18:19.526640671 +0000
++++ linux-4.9.275-vs2.3.9.13/Makefile	2021-07-12 23:14:39.204270276 +0000
+@@ -1,7 +1,7 @@
+ VERSION = 4
+ PATCHLEVEL = 9
+ SUBLEVEL = 286
+-EXTRAVERSION =
++EXTRAVERSION = -vs2.3.9.13
+ NAME = Roaring Lionus
+ 
+ # *DOCUMENTATION*
