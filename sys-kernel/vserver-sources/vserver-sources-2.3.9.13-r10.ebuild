@@ -3,18 +3,15 @@
 # $Id$
 
 EAPI="8"
-
-K_WANT_GENPATCHES="base extras experimental"
-K_GENPATCHES_VER="282"
-
 ETYPE="sources"
+K_WANT_GENPATCHES="base extras experimental"
+K_GENPATCHES_VER="294"
 
-CKV="4.9.278"
-VSV="4.9.275"
+CKV="4.9.290"
+VSV="4.9.27X"
 
 K_USEPV=1
 K_NOSETEXTRAVERSION=1
-K_NODRYRUN=1
 
 inherit kernel-2
 detect_version
@@ -24,10 +21,10 @@ IUSE="experimental"
 
 DESCRIPTION="Full sources including Linux-VServer patchsets for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
 HOMEPAGE="http://www.gentoo.org/proj/en/vps/"
-SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI}
-	http://vserver.13thfloor.at/Experimental/patch-${VSV}-vs${PV}.diff"
+SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
-UNIPATCH_LIST="${DISTDIR}/patch-${VSV}-vs${PV}.diff"
+UNIPATCH_LIST="${FILESDIR}/patch-${VSV}-vs${PV}.diff
+${FILESDIR}/Makefile-${CKV}-vs${PV}.diff"
 UNIPATCH_STRICTORDER=1
 
 pkg_postinst() {

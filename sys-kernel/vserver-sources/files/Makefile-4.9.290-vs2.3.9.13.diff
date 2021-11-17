@@ -4,7 +4,7 @@ diff -NurpP --minimal linux-4.9.275/Makefile linux-4.9.275-vs2.3.9.13/Makefile
 @@ -1,7 +1,7 @@
  VERSION = 4
  PATCHLEVEL = 9
- SUBLEVEL = 282
+ SUBLEVEL = 290
 -EXTRAVERSION =
 +EXTRAVERSION = -vs2.3.9.13
  NAME = Roaring Lionus
