@@ -1,9 +1,9 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit eutils bash-completion-r1
+inherit bash-completion-r1
 
 MY_P="${P/_/-}"
 
@@ -37,6 +37,8 @@ S="${WORKDIR}/${MY_P}"
 
 PATCHES=(
 	"${FILESDIR}/${P}-vserver-init-functions.patch"
+	"${FILESDIR}/${P}-openrc-compat.patch"
+	"${FILESDIR}/${P}-no-mtab.patch"
 )
 
 
@@ -69,10 +71,6 @@ src_prepare() {
 	if use dietlibc; then
 		eapply "${FILESDIR}/${P}-dietlibc.patch"
 	fi
-
-	sed -i -e 's:/sbin/runscript:/sbin/openrc-run:g' gentoo/util-vserver || die
-	sed -i -e 's:/sbin/runscript:/sbin/openrc-run:g' gentoo/vprocunhide || die
-	sed -i -e 's:/sbin/runscript:/sbin/openrc-run:g' gentoo/vservers.default || die
 
 }
 
